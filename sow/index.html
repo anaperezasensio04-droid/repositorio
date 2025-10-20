@@ -30,17 +30,24 @@
     <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
+    <!-- HEADER BLANCO CON MENÚ A LA DERECHA -->
     <header>
-      <h1>Some Outstanding Webs</h1>
-      <nav>
-        <!-- Menú de navegación fijo -->
-        <ul>
-          <li><a href="#site-awwwards">Awwwards</a></li>
-          <li><a href="#site-webby">Webby</a></li>
-          <li><a href="#site-fwa">FWA</a></li>
-          <li><a href="#site-cssda">CSSDA</a></li>
-        </ul>
-      </nav>
+      <div class="header-container">
+        <h1>Análisis</h1>
+
+        <!-- Checkbox oculto para controlar el menú -->
+        <input type="checkbox" id="menu-toggle" />
+        <label for="menu-toggle" class="menu-icon">☰</label>
+
+        <nav id="main-nav">
+          <ul>
+            <li><a href="#site-awwwards">LOT2S</a></li>
+            <li><a href="#site-webby">SocietyStudios</a></li>
+            <li><a href="#site-fwa">SamsyNinja</a></li>
+            <li><a href="#site-cssda">Planetary</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main>
@@ -48,9 +55,8 @@
         <h1 class="title">Some Outstanding Webs</h1>
       </section>
 
-      <!-- Secciones individuales para cada sitio -->
       <section id="site-awwwards">
-        <h2>Awwwards</h2>
+        <h2>LOT2S</h2>
         <iframe
           src="https://lo2s.com/about"
           title="Sitio Awwwards"
@@ -58,40 +64,72 @@
           height="400"
           loading="lazy"
         ></iframe>
-        <!-- Contenido de análisis del sitio Awwwards -->
-        <p>Aqui iria el texto de la seccion</p>
+        <div class="columns-container">
+  <div class="column">
+    <h3>Introducción y justificación</h3>
+    <p>“LO2S” es una agencia creativa que combina arte, tecnología y diseño de espacios. Enfatiza especialmente las experiencias sensoriales, instalaciones interactivas, diseño 3D/kinético, luz, sonido, motion, etc. Es una agencia muy moderna dentro la industria de diseño, entretenimiento, experiencias inmersivas, y altamente competitiva con expectativas altas. Fue fundada en 2014 en Beirut, Líbano y ahora su sede está en Dubái.</p>
+  </div>
+
+  <div class="column">
+    <h3>Producción de experiencia</h3>
+    <p>La web no es simplemente un portafolio, es también un estudio de producción de experiencia, espectáculo, instalaciones, diseño de escenario.</p>
+  </div>
+
+  <div class="column">
+    <h3>Navegación inicial</h3>
+    <p>La primera imagen de la página web es muy impactante, un montaje de vídeos cuidados y atractivos visualmente que muestran la esencia de la agencia.</p>
+  </div>
+
+  <div class="column">
+    <h3>Primera impresión</h3>
+    <p>Al explorar la página destaca el diseño minimalista pero elegante, combinando contenido visual con texto potente y frases evocativas.</p>
+  </div>
+
+  <div class="column">
+    <h3>Estructura y secciones</h3>
+    <p>El desglose de la web se organiza en secciones múltiples con menú de navegación para saltar entre “Work”, “About”, etc.</p>
+  </div>
+
+  <div class="column">
+    <h3>Contenido textual</h3>
+    <p>Texto evocador, aspiracional, con tono joven y cercano, destacando servicios y capacidades técnicas de forma atractiva.</p>
+  </div>
+
+  <div class="column">
+    <h3>Análisis visual</h3>
+    <p>Diseño que apoya la creatividad y sensorialidad, predominando fondos oscuros y textos claros para resaltar elementos clave.</p>
+  </div>
+
+  <div class="column">
+    <h3>Identidad de marca</h3>
+    <p>“LO2S” presenta su identidad en cada encuadre visual, con tipografía moderna y estilo coherente que refuerza su mensaje.</p>
+  </div>
+
+  <div class="column">
+    <h3>Interacción y elementos innovadores</h3>
+    <p>Combinación de diseño espacial, interactividad, instalaciones físicas y contenido digital/visual que da un valor diferencial.</p>
+  </div>
+
+  <div class="column">
+    <h3>Usabilidad y accesibilidad</h3>
+    <p>Experiencia de usuario cuidada, navegación intuitiva y jerarquía visual clara, aunque puede mejorar en rendimiento y accesibilidad.</p>
+  </div>
+
+  <div class="column">
+    <h3>Desempeño técnico</h3>
+    <p>Carga de animaciones y visuales pesados, buen rendimiento en desktop, pero en móvil puede requerir optimización adicional.</p>
+  </div>
+
+  <div class="column">
+    <h3>Criterios de excelencia</h3>
+    <p>Valoración global: Diseño visual 8.5/10, Usabilidad 8/10, Creatividad 7.5/10, Contenido 8.5/10, Rendimiento 7/10, Identidad de marca 8.5/10, Experiencia global 8.5/10.</p>
+  </div>
+</div>
+
       </section>
 
       <section id="site-webby">
-        <h2>Webby Awards</h2>
-        <iframe
-          src="https://planetary.co/"
-          title="Sitio Awwwards"
-          width="100%"
-          height="400"
-          loading="lazy"
-        ></iframe>
-        <!-- Contenido de análisis del sitio Awwwards -->
-        <p>Aqui iria el texto de la seccion</p>
-        <!-- Contenido de análisis del sitio Webby -->
-      </section>
-
-      <section id="site-fwa">
-        <h2>Awwwards</h2>
-        <iframe
-          src=" https://samsy.ninja/about "
-          title="Sitio Awwwards"
-          width="100%"
-          height="400"
-          loading="lazy"
-        ></iframe>
-        <!-- Contenido de análisis del sitio Awwwards -->
-        <p>Aqui iria el texto de la seccion</p>
-        <!-- Contenido de análisis del sitio Awwwards -->
-      </section>
-
-      <section id="site-cssda">
-        <h2>Webby Awards</h2>
+        <h2>SocietyStudios</h2>
         <iframe
           src="https://www.gabrielveres.com/projects/society-studios"
           title="Sitio Awwwards"
@@ -99,12 +137,32 @@
           height="400"
           loading="lazy"
         ></iframe>
-        <!-- Contenido de análisis del sitio Awwwards -->
         <p>Aqui iria el texto de la seccion</p>
-        <!-- Contenido de análisis del sitio Webby -->
       </section>
 
-      <!-- Más secciones para FWA, CSS Design Awards, etc. -->
+      <section id="site-fwa">
+        <h2>SamsyNinja</h2>
+        <iframe
+          src="https://samsy.ninja/about"
+          title="Sitio Awwwards"
+          width="100%"
+          height="400"
+          loading="lazy"
+        ></iframe>
+        <p>Aqui iria el texto de la seccion</p>
+      </section>
+
+      <section id="site-cssda">
+        <h2>Planetary</h2>
+        <iframe
+          src="https://planetary.co/"
+          title="Sitio Awwwards"
+          width="100%"
+          height="400"
+          loading="lazy"
+        ></iframe>
+        <p>Aqui iria el texto de la seccion</p>
+      </section>
     </main>
 
     <footer>

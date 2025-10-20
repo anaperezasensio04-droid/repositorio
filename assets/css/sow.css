@@ -1,61 +1,224 @@
+/* BODY Y RESTO DEL CONTENIDO */
 body {
-background-color: aliceblue;
+  background-color: #000; /* Fondo negro */
+  color: #fff; /* Texto blanco por defecto */
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-section {
-    height: 90vh;
+section, p, a, li, h1, h2, h3, h4, h5, h6 {
+  color: #fff; /* Mantener texto blanco fuera del header */
 }
 
+iframe {
+  border: none;
+  border-radius: 0;
+  display: block;
+  width: 100%;
+  background-color: #000;
+}
+
+/* HEADER BLANCO CON MENÚ DERECHA */
 header {
-	background: #fff;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #fff; /* Fondo blanco */
+  color: #000;      /* Texto negro */
+  padding: 1rem;
+  position: relative;
 }
-nav {
-	position: fixed;
-	top: 0;
-	z-index: 1000;
+
+.header-container {
+  display: flex;
+  justify-content: space-between; /* Título a la izquierda, menú a la derecha */
+  align-items: center;
 }
-nav ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	display: flex;
+
+/* Título */
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #000;
 }
-nav ul li {
-	margin-right: 1rem;
+
+/* Checkbox oculto */
+#menu-toggle {
+  display: none;
 }
-nav ul li a {
-	text-decoration: none;
-	color: #333;
+
+/* Ícono del menú */
+.menu-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  user-select: none;
+  color: #000; /* Icono negro */
 }
+
+/* NAV colapsable */
+#main-nav {
+  position: absolute;
+  top: 100%;      /* Despliega hacia abajo */
+  right: 1rem;    /* Menú alineado a la derecha */
+  width: 200px;
+  max-height: 0;  /* Oculto por defecto */
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  background: #fff; /* Fondo blanco */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#main-nav ul li {
+  border-bottom: 1px solid #eee;
+}
+
+#main-nav ul li:last-child {
+  border-bottom: none;
+}
+
+#main-nav ul li a {
+  display: block;
+  padding: 1rem;
+  color: #000; /* Texto negro */
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+#main-nav ul li a:hover {
+  background: #f0f0f0; /* Hover gris claro */
+}
+
+/* Expansión del menú al marcar el checkbox */
+#menu-toggle:checked + .menu-icon + #main-nav {
+  max-height: 500px;
+}
+
+/* COVER Y TÍTULO ANIMADO */
 .cover {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	background: #222;
-	color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #000000; /* Fondo oscuro */
+  color: #fff;
 }
+
 .title {
-	overflow: hidden;
-	white-space: nowrap;
-	border-right: 0.15em solid currentColor;
-	animation: typing 2s steps(30, end) forwards, blink-caret 0.75s step-end infinite;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 0.15em solid currentColor;
+  animation: typing 2s steps(30, end) forwards, blink-caret 0.75s step-end infinite;
 }
+
 h1 {
-	display: block;
-	max-width: 24%;
+  display: block;
+  max-width: 24%;
 }
+.columns-container {
+  display: flex;
+  flex-wrap: wrap; /* Para que en móviles se ajusten */
+  gap: 2rem; /* Espacio entre columnas */
+  margin: 2rem 1rem; /* Margen alrededor de todo el bloque */
+}
+
+.column {
+  flex: 1 1 22%; /* Cada columna ocupa ~22% del contenedor, se ajusta */
+  min-width: 200px; /* Evita que se haga demasiado estrecha en móviles */
+  background: #111; /* Fondo oscuro para diferenciar del header */
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.column h3 {
+  margin-top: 0;
+  color: #fff; /* Títulos en blanco */
+}
+
+.column p {
+  color: #fff; /* Texto en blanco */
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+.columns-container {
+  display: flex;
+  flex-wrap: wrap; /* Para que se ajusten en móviles */
+  gap: 2rem;       /* Espacio entre columnas */
+  margin: 2rem 1rem; 
+}
+
+.column {
+  flex: 1 1 22%;   /* 4 columnas aprox en escritorio */
+  min-width: 200px; /* Evita que se haga demasiado estrecha */
+  background: #111; 
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.column h3 {
+  margin-top: 0;
+  color: #fff;
+}
+
+.column p {
+  color: #fff;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+/* Responsive: 2 columnas en tablets, 1 columna en móviles */
+@media (max-width: 1024px) {
+  .column {
+    flex: 1 1 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  .column {
+    flex: 1 1 100%;
+  }
+}
+.column {
+  flex: 1 1 22%;   /* 4 columnas aprox en escritorio */
+  min-width: 200px; /* Evita que se haga demasiado estrecha */
+  background: rgba(255, 255, 255, 0.05); /* Fondo transparente/semisólido */
+  padding: 1rem;
+  border-radius: 15px; /* Esquinas redondeadas */
+  border: 1px solid rgba(112, 110, 110, 0.2); /* Borde sutil */
+  backdrop-filter: blur(5px); /* Efecto de desenfoque del fondo */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
+}
+
+.column h3 {
+  margin-top: 0;
+  color: #fff;
+}
+
+.column p {
+  color: #fff;
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
+
+/* ANIMACIONES */
 @keyframes typing {
-	from {
-		width: 0;
-	}
-	to {
-		width: 100%;
-	}
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
+
 @keyframes blink-caret {
-	50% {
-		border-color: transparent;
-	}
+  50% {
+    border-color: transparent;
+  }
 }
