@@ -222,3 +222,30 @@ h1 {
     border-color: transparent;
   }
 }
+
+/* Títulos de las secciones (antes de los iframes) */
+section h2 {
+  font-size: 5rem; /* Más grande */
+  margin-bottom: 1rem;
+  color: #fff; /* Se mantiene blanco sobre fondo negro */
+  text-align: left; 
+}
+
+/* Footer blanco con texto negro */
+footer {
+  background: #fff;
+  color: #000;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+#site-awwwards {
+  margin-bottom: 9rem;
+}
+
+#site-webby {
+  margin-bottom: 9rem;
+}
+
+/* Y así sucesivamente si quieres personalizar cada separación */
