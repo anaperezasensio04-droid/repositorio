@@ -205,9 +205,9 @@ header h1 {
 /* Título de la portada (Some outstanding webs) */
 .cover-title {
   display: block;
-  width: 100%;
+  width: 80%;
   text-align: center; /* Centrado en pantalla */
-  font-size: 3rem; /* Más grande y protagonista */
+  font-size: 7rem; /* Más grande y protagonista */
 }
 
 
