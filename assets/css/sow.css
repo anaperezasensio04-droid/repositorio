@@ -249,92 +249,103 @@ header h1 {
 }
 
 
-.columns-container {
-  display: flex;
-  flex-wrap: wrap; /* Para que en móviles se ajusten */
-  gap: 2rem; /* Espacio entre columnas */
-  margin: 2rem 1rem; /* Margen alrededor de todo el bloque */
+/* Contenedor grid 4 columnas x 3 filas */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  /* Convertir el grid en full-bleed: ocupa todo el ancho del viewport */
+  padding: 3rem 2rem; /* espacio interior para alineación con el contenido */
+  width: 100vw;
+  max-width: 100vw;
+  box-sizing: border-box;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw; /* compensar el desplazamiento para que llegue al borde izquierdo */
+  margin-right: -50vw; /* compensar el desplazamiento para que llegue al borde derecho */
+  background: transparent;
 }
-
-.column {
-  flex: 1 1 22%; /* Cada columna ocupa ~22% del contenedor, se ajusta */
-  min-width: 200px; /* Evita que se haga demasiado estrecha en móviles */
-  background: #111; /* Fondo oscuro para diferenciar del header */
-  padding: 1rem;
-  border-radius: 5px;
-}
-/* Títulos de las columnas */
-.column h3 {
-  font-size: 2rem; /* tamaño base */
-  font-weight: 700;
-  color: #fff;
-  margin-top: 0;
-}
-
-.column p {
-  color: #fff; /* Texto en blanco */
-  line-height: 1.5;
-  font-size: 0.9rem;
-}
-
-.columns-container {
-  display: flex;
-  flex-wrap: wrap; /* Para que se ajusten en móviles */
-  gap: 2rem;       /* Espacio entre columnas */
-  margin: 2rem 1rem; 
-}
-
-.column {
-  flex: 1 1 22%;   /* 4 columnas aprox en escritorio */
-  min-width: 200px; /* Evita que se haga demasiado estrecha */
-  background: #111; 
-  padding: 1rem;
-  border-radius: 5px;
-}
-
-.column h3 {
-  margin-top: 0;
-  color: #fff;
-}
-
-.column p {
-  color: #fff;
-  line-height: 1.5;
-  font-size: 0.9rem;
-}
-
-/* Responsive: 2 columnas en tablets, 1 columna en móviles */
 @media (max-width: 1024px) {
-  .column {
-    flex: 1 1 45%;
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 600px) {
-  .column {
-    flex: 1 1 100%;
+  .projects-grid {
+    grid-template-columns: 1fr;
+    padding-left: 1rem; /* reducir padding en móviles */
+    padding-right: 1rem;
   }
 }
-.column {
-  flex: 1 1 22%;   /* 4 columnas aprox en escritorio */
-  min-width: 200px; /* Evita que se haga demasiado estrecha */
-  background: rgba(255, 255, 255, 0.05); /* Fondo transparente/semisólido */
-  padding: 1rem;
-  border-radius: 15px; /* Esquinas redondeadas */
-  border: 1px solid rgba(112, 110, 110, 0.2); /* Borde sutil */
-  backdrop-filter: blur(5px); /* Efecto de desenfoque del fondo */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra suave */
+
+.project-card {
+  background: #121212;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.7), 0 2px 4px -2px rgba(0,0,0,0.7);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
 }
 
-.column h3 {
-  margin-top: 0;
-  color: #fff;
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(255,255,255,0.15), 0 4px 6px -4px rgba(255,255,255,0.1);
 }
 
-.column p {
-  color: #fff;
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.2s ease;
+  filter: brightness(0.85);
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+  filter: brightness(1);
+}
+
+.project-content {
+  padding: 1.5rem;
+}
+
+.project-content h3 {
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #f5f5f5; /* texto claro */
+}
+
+.project-content p {
+  color: #bbbbbb; /* gris claro */
+  margin-bottom: 1rem;
   line-height: 1.5;
-  font-size: 0.9rem;
+}
+
+/* Tags */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background: #bb86fc; /* color morado suave */
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Asegurar imágenes responsive */
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* ANIMACIONES */
