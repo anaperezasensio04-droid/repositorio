@@ -246,6 +246,12 @@ header h1 {
   width: 80%;
   text-align: center; /* Centrado en pantalla */
   font-size: 7rem; /* Más grande y protagonista */
+
+  /* Animación coherente con la portada principal */
+  opacity: 0;
+  transform: translateY(50px) scale(0.98) rotate(-0.8deg);
+  animation: subtleSlide 1.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation-delay: 0.4s;
 }
 
 
@@ -366,10 +372,29 @@ img {
 
 /* Títulos de las secciones (antes de los iframes) */
 section h2 {
-  font-size: 7rem; /* Más grande */
+  /* Responsive: tamaño flexible entre mínimo y máximo según ancho de viewport */
+  font-size: clamp(1.75rem, 4.5vw, 4.5rem);
   margin-bottom: 1rem;
   color: #fff; /* Se mantiene blanco sobre fondo negro */
-  text-align: left; 
+  text-align: left;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  max-width: 100%;
+  word-break: break-word; /* Evitar que palabras largas salgan del contenedor */
+  padding: 0 1rem; /* espacio lateral para móviles */
+
+  /* Sin animación: mostrar directamente */
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 600px) {
+  section h2 {
+    /* Ajuste más conservador en móviles pequeños */
+    font-size: clamp(1.25rem, 6.5vw, 2.2rem);
+    margin-bottom: 0.75rem;
+    padding: 0 0.75rem;
+  }
 }
 
 /* Footer blanco con texto negro */
@@ -408,4 +433,84 @@ footer {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Responsive header: ajustes para móvil y escritorio */
+/* Ajustes generales ya definidos arriba; aquí se añaden reglas responsivas */
+
+/* Desktop: mostrar navegación en horizontal y ocultar el icono de menú */
+@media (min-width: 768px) {
+  header {
+    height: auto;
+    padding: 0.9rem 2rem;
+  }
+
+  .header-container {
+    height: auto;
+    padding: 0;
+    align-items: center;
+  }
+
+  .menu-icon {
+    display: none; /* ocultar icono en pantallas grandes */
+  }
+
+  /* Mostrar nav siempre en desktop, estilo horizontal */
+  #main-nav {
+    position: static;
+    top: auto;
+    right: auto;
+    width: auto;
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    display: block;
+  }
+
+  #main-nav ul {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  #main-nav ul li a {
+    padding: 0.5rem 0.75rem;
+    color: #000 !important;
+    font-weight: 600;
+  }
+}
+
+/* Móvil: asegurar que el header sea compacto y el nav colapsable funcione bien */
+@media (max-width: 767px) {
+  header {
+    height: 64px;
+    padding: 0.5rem 1rem;
+  }
+
+  .header-container {
+    height: 64px;
+    padding: 0 0.5rem;
+  }
+
+  .menu-icon {
+    display: block; /* aseguramos que esté visible en móviles */
+  }
+
+  /* Ajustes del nav desplegable en móvil */
+  #main-nav {
+    top: 64px; /* aparece justo debajo del header móvil */
+    right: 0.75rem;
+    width: 220px;
+    padding: 6px 0;
+  }
+}
+
+/* Pequeños ajustes para mantener el header encima de todo */
+header, .menu-icon, #main-nav {
+  z-index: 1100;
 }
